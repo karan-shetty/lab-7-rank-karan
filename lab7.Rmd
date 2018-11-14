@@ -12,3 +12,21 @@ knitr::opts_chunk$set(echo = TRUE)
 hello this is steve
 
 
+Its VAN and I am going to make a Histogram 
+```{r}
+
+library(tidyverse)
+
+kermit <- read_csv("kermit.csv")
+
+# I created a histogram!
+kermit_hist <- ggplot(kermit, aes(x = Score.pre))+
+  geom_histogram() +
+  facet_wrap(~ Gender)
+
+kermit
+
+```
+
+
+
