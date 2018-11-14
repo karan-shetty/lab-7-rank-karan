@@ -24,9 +24,25 @@ kermit_hist <- ggplot(kermit, aes(x = Score.pre))+
   geom_histogram() +
   facet_wrap(~ Gender)
 
-kermit
+kermit_hist
 
 ```
 
 
+Teysa : doing some rank based test
+
+```{r}
+
+# Is there a significant difference in pre-talk Kermit scores for males and females?
+
+# Unpaired: Mann Whitney U (because we're only looking at pre-talk scores, NOT pre vs. post test)
+
+mwu_kermit <- kermit %>% 
+  wilcox.test(Score.pre ~ Gender, data = .) #wilcox.test was made before piping existed so you must specify "data= ." which says use the most recent data frame
+
+mwu_kermit
+
+# No significant difference between pre-talk Kermit scores for males and females (because p-value is greater than 0.05). 
+
+```
 
