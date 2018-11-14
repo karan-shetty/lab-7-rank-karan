@@ -24,8 +24,7 @@ kermit_hist <- ggplot(kermit, aes(x = Score.pre))+
   geom_histogram() +
   facet_wrap(~ Gender)
 
-kermit
-
+kermit_hist 
 ```
 
 
